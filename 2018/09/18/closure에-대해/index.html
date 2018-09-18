@@ -208,6 +208,18 @@
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h1 id="closure"><a href="#closure" class="headerlink" title="closure ?"></a>closure ?</h1><p>클로저는 함수와 비슷하다. 정확히 말하면 이름이 없고, 함수 안, 밖을 가리지 않고 만들수 있는 함수 비스무리한 개념이다. 축약하여 “이름없는 함수” 라고 할 수 있겠다. 흔히 “익명함수” 혹은 “람다함수” 라고도 불리지만…</p>
+<h4 id="함수-vs-클로저"><a href="#함수-vs-클로저" class="headerlink" title="함수 vs 클로저"></a>함수 vs 클로저</h4><p>함수</p>
+<ul>
+<li>이름이 있다.</li>
+<li>func 키워드가 존재한다.</li>
+<li>in 키워드가 존재하지 않는다.</li>
+</ul>
+<p>클로저</p>
+<ul>
+<li>이름이 없다.</li>
+<li>func 키워드가 존재하지 않는다.</li>
+<li>in 키워드가 존재한다.</li>
+</ul>
 <h3 id="basic-closure"><a href="#basic-closure" class="headerlink" title="basic closure"></a>basic closure</h3><p>클로저의 기본 형태들을 알아보자.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> simpleClosure = &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"This is SimpleClosure!!"</span>)</span><br><span class="line">&#125;</span><br><span class="line">simpleClosure()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> closureParameter = &#123; (str: <span class="type">String</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> str.<span class="built_in">count</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> <span class="built_in">count</span> = closureParameter(<span class="string">"Swift"</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">count</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">voidFunction</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"1"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> var1 = voidFunction</span><br><span class="line"><span class="keyword">let</span> var2: ()-&gt;() = &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"1"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>클로저는 코드안에서 여기저기 전달할수 있고 사용할수 있는 독립적인 기능 블록이다.</p>
