@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="furabono blog"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="FURABONO"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="closure에 대해 (1)"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="furabono blog"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="study blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://furabonos.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://furabonos.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>closure에 대해 (1) - study blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>closure에 대해 (1)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-09-18
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/swift/">#swift</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="closure"><a href="#closure" class="headerlink" title="closure ?"></a>closure ?</h1><p>클로저는 함수와 비슷하다. 정확히 말하면 이름이 없고, 함수 안, 밖을 가리지 않고 만들수 있는 함수 비스무리한 개념이다. 축약하여 “이름없는 함수” 라고 할 수 있겠다. 혼히 “익명함수” 혹은 “람다함수” 라고도 불리지만…</p>
+<h3 id="basic-closure"><a href="#basic-closure" class="headerlink" title="basic closure"></a>basic closure</h3><p>클로저의 기본 형태들을 알아보자.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> simpleClosure = &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"This is SimpleClosure!!"</span>)</span><br><span class="line">&#125;</span><br><span class="line">simpleClosure()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> closureParameter = &#123; (str: <span class="type">String</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> str.<span class="built_in">count</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> <span class="built_in">count</span> = closureParameter(<span class="string">"Swift"</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">count</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">voidFunction</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"1"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> var1 = voidFunction</span><br><span class="line"><span class="keyword">let</span> var2: ()-&gt;() = &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"1"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>클로저는 코드안에서 여기저기 전달할수 있고 사용할수 있는 독립적인 기능 블록이다.</p>
+</li>
+<li><p>클로저는 자신이 정의되는 시점에 주변 환경(문맥, context)으로부터 여러 상수나 변수에 대한 참조를 잡아내서(capture) 저장한다</p>
+</li>
+<li><p>이렇게 문맥에서 참조를 잡아서 저장하는 과정을 클로징(closing)이라고 하고, 상수와 변수에 대해 그렇게 닫기 때문에 클로저(closure)라 부른다.</p>
+</li>
+</ul>
+<h3 id="Inline-closure"><a href="#Inline-closure" class="headerlink" title="Inline closure"></a>Inline closure</h3><p>먼저 inline closure의 형태를 알아보자.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printSwift</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Swift"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arg = &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Inline Closure!!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">closureParamFunction</span><span class="params">(closure: <span class="params">()</span></span></span> -&gt; <span class="type">Void</span>) &#123;</span><br><span class="line">  closure()</span><br><span class="line">&#125;</span><br><span class="line">closureParamFunction(closure: printSwift)</span><br><span class="line">closureParamFunction(closure: arg)</span><br><span class="line">closureParamFunction(closure: &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"explicit closure parameter name"</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> evenNumberFilter: (<span class="type">Int</span>) -&gt; <span class="type">Bool</span> = &#123; $<span class="number">0</span> % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br><span class="line"><span class="built_in">print</span>((<span class="number">0</span>...<span class="number">10</span>).<span class="built_in">filter</span>(evenNumberFilter))</span><br></pre></td></tr></table></figure></p>
+<p>inline closure는 파라미터명 대신 $0, $1, $2 등으로 표현 가능하며, 파라미터와 in 키워드를 생략가능하다. </p>
+<h3 id="Trailing-Closure"><a href="#Trailing-Closure" class="headerlink" title="Trailing Closure"></a>Trailing Closure</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">closureParamFunction() &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Trailing"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">closureParamFunction &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Trailing"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">closureParamFunction2</span><span class="params">(closure1: <span class="params">()</span></span></span> -&gt; <span class="type">Void</span>, closure2: () -&gt; <span class="type">Void</span>) &#123;</span><br><span class="line">  closure1()</span><br><span class="line">  closure2()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">closureParamFunction2(closure1: &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"inline"</span>)</span><br><span class="line">&#125;, closure2: &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"inline"</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">closureParamFunction2(closure1: &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"inline"</span>)</span><br><span class="line">&#125;) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"trailing"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>함수의 파라미터로 클로져를 넣을 때가 있다. 그 중 함수의 파라미터 중 마지막 파라미터가 클로져일 경우에는 trailing closure로 코드를 적는 것이 더 편합니다. trailing closure란 클로져를 함수를 호출하는 부분의 바깥에 클로져를 적어주는 것.</p>
+<h3 id="Syntax-Optimization"><a href="#Syntax-Optimization" class="headerlink" title="Syntax Optimization"></a>Syntax Optimization</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">performClosure</span><span class="params">(param: <span class="params">(String)</span></span></span> -&gt; <span class="type">Int</span>) &#123;</span><br><span class="line">  <span class="built_in">print</span>(param(<span class="string">"Swift"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">performClosure(param: &#123; (str: <span class="type">String</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> str.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">performClosure(param: &#123; (str: <span class="type">String</span>) <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> str.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">performClosure(param: &#123; str <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> str.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">performClosure(param: &#123;</span><br><span class="line">  <span class="keyword">return</span> $<span class="number">0</span>.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">performClosure(param: &#123;</span><br><span class="line">  $<span class="number">0</span>.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">performClosure(param: ) &#123;</span><br><span class="line">  $<span class="number">0</span>.<span class="built_in">count</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">performClosure() &#123;</span><br><span class="line">  $<span class="number">0</span>.<span class="built_in">count</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">performClosure &#123; $<span class="number">0</span>.<span class="built_in">count</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>위의 예시는 모두 같은 기능이다.<br>맨 밑처럼 간편하게 클로저를 사용할수 있다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 FURABONO<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
