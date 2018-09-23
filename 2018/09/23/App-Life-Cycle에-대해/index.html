@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="study blog"/>
+        <meta property="og:title" content="App Life Cycle에 대해"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2018/9 - study blog</title>
+    <title>App Life Cycle에 대해 - study blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -157,101 +157,93 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018/9</h1>
+                <div class="post-heading">
+                    <h1>App Life Cycle에 대해</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-09-23
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/swift/">#swift</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/09/23/App-Life-Cycle에-대해/">
-        <h1 class="post-title archive">
-            App Life Cycle에 대해
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-23
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/09/21/optional-이란/">
-        <h1 class="post-title archive">
-            optional 이란?
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-21
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/20/closure에-대해-3-escaping/">
-        <h1 class="post-title archive">
-            closure에 대해 (3) - noescaping, escaping
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-20
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/19/closure에-대해-2-capture-list/">
-        <h1 class="post-title archive">
-            closure에 대해 (2) - capture list
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/18/closure에-대해/">
-        <h1 class="post-title archive">
-            closure에 대해 (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>포스팅의 타이틀은 App Life Cycle 이지만 App 실행 전체에 대해 공부하는 시간을 갖도록 하za</p>
+<h4 id="ios에서-앱-첫-실행시"><a href="#ios에서-앱-첫-실행시" class="headerlink" title="ios에서 앱 첫 실행시"></a>ios에서 앱 첫 실행시</h4><p>C언어 기반의 언어에서는 앱 실행시 main 이라는 함수로 시작을 한다. ios 또한 ObjectiveC 기반(C언어 기반)에서 돌아가기 때문에 main 함수에서 시작한다.<br>다만 ios의 핵심 라이브러리인 UIKit framework가 main을 관리하여 개발자들이 직접 main에 코드를 작성하지 않아도 된다. 그렇다고 개발자들이 main에 관여 할수 없는것은 아니다. UIKit은 main을 다루는 과정에서 UIApplicationMain 이라는 함수를 실행하는데 개발자들은 이 함수를 통해 main에 관여할수 있다. 그래서 UIApplication에 대해 좀 더 공부할 필요가 있다.</p>
+<h4 id="UIApplication"><a href="#UIApplication" class="headerlink" title="UIApplication"></a>UIApplication</h4><p>모든 iOS 앱들은 UIApplicationMain 함수를 실행한다. 이 때 생성되는 것 중 하나가 UIApplication 객체다. UIApplication 객체는 singleton 형태로 생성되어, UIApplication.shared의 형태로 앱 전역에서 사용할 수 있다. UIApplication 객체의 가장 중요한 역할은 user의 이벤트에 반응하여 앱의 초기 routing(초기 설정)을 하는 것이다. 예를 들자면, UIApplication 객체는 앱이 Background에 진입한 상태에서 추가적인 작업을 할 수 있도록 만들어주거나, 푸쉬 알람을 받았을 때 어떤 방식으로 이를 처리할지 등에 대한 것을 다룬다. 즉 UIApplication 객체는 앱이 해야 할 중요하고 핵심적인 일, 앱의 생명주기 관리나 이벤트 처리와 같은 것들을 담당한다.</p>
+<h4 id="Main-Run-Loop"><a href="#Main-Run-Loop" class="headerlink" title="Main Run Loop ?"></a>Main Run Loop ?</h4><p>Main Run Loop라는 것은 유저가 일으키는 이벤트들을 처리하는 프로세스다. UIApplication 객체는 앱이 실행될 때, Main Run Loop를 실행하고, 이 Main Run Loop를 View와 관련된 이벤트나 View의 업데이트에 활용한다. 또한, Main Run Loop는 View와 관련되어 있기 때문에 Main 쓰레드에서 실행된다.<br>밑의 사진을 보고 Loop의 순서를 보도록 하자.<br><img src="https://i.imgur.com/oHQADGo.png" alt="Imgur"><br>순서를 살펴보면,</p>
+<ol>
+<li>유저가 이벤트를 일으킨다.</li>
+<li>시스템을 통해 이벤트가 생성된다.</li>
+<li>UIKit을 통해 생성된 port로 해당 이벤트가 앱으로 전달된다.</li>
+<li>이벤트는 앱 내부적으로 Queue의 형태로 정리되고, Main Run Loop에 하나씩 매핑 된다.</li>
+<li>UIApplication 객체는 이때 가장 먼저 이벤트를 받는 객체로 어떤 것이 실행되야하는지 결정한다.</li>
+</ol>
+<h3 id="App-Life-Cycle"><a href="#App-Life-Cycle" class="headerlink" title="App Life Cycle"></a>App Life Cycle</h3><h4 id="App-State"><a href="#App-State" class="headerlink" title="App State"></a>App State</h4><p>앱의 상태는 크게 5가지로 구분된다.<br><img src="https://i.imgur.com/93k1LBx.png" alt="Imgur"></p>
+<ul>
+<li>Not running : 앱이 실행되지 않았거나 종료된 상태.</li>
+<li>Inactive : 앱이 돌아가고 있는 상태지만, 이벤트는 받지 않는 상태. 앱의 상태 전환 과정에서 잠시 머무르는 단계.</li>
+<li>Active : 일반적인 앱이 실행되는 단계.</li>
+<li>Background : 앱이 Background에 있고 코드를 실행하고 있는 상태. 대부분의 앱은 Suspended상태로 가는 도중에 잠깐 이 상태를 갖게 된다. Background 상태에서 추가적인 코드 수행시간이 필요할 경우, 좀더 머무를수 있다.</li>
+<li>Suspended : 앱이 Back ground 상태에 있으면서 코드를 수행하지 않는 단계. Suspended 상태인 앱은 메모리에는 올라가지만 어떤 코드도 수행하지 않는다. 메모리가 부족할 경우, 앱을 강제로 종료하기도 한다.</li>
 </ul>
+<h4 id="App-Delegate"><a href="#App-Delegate" class="headerlink" title="App Delegate"></a>App Delegate</h4><p>위에서 본 App State는 각 단계마다 App delegate객체의 메소드를 거쳐간다. 아래의 메소드들은 앱의 상태가 변할때마다 적절한 처리를 가능하게 한다.</p>
+<p><img src="https://i.imgur.com/lSsFgKC.png" alt="Imgur"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
