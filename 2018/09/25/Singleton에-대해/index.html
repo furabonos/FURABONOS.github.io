@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="study blog"/>
+        <meta property="og:title" content="Singleton에 대해"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>swift - study blog</title>
+    <title>Singleton에 대해 - study blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -157,114 +157,88 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#swift</h1>
+                <div class="post-heading">
+                    <h1>Singleton에 대해</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-09-25
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/swift/">#swift</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/09/25/Singleton에-대해/">
-        <h1 class="post-title archive">
-            Singleton에 대해
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-25
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/09/23/App-Life-Cycle에-대해/">
-        <h1 class="post-title archive">
-            App Life Cycle에 대해
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/21/optional-이란/">
-        <h1 class="post-title archive">
-            optional 이란?
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-21
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/20/closure에-대해-3-escaping/">
-        <h1 class="post-title archive">
-            closure에 대해 (3) - noescaping, escaping
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-20
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/19/closure에-대해-2-capture-list/">
-        <h1 class="post-title archive">
-            closure에 대해 (2) - capture list
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/18/closure에-대해/">
-        <h1 class="post-title archive">
-            closure에 대해 (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton ?"></a>Singleton ?</h3><ul>
+<li>특정 클래스의 인스턴스에 접근할 때 항상 동일한 인스턴스만을 반환하도록 하는 설계 패턴</li>
+<li>한번 생성된 이후에는 프로그램이 종료될때까지 메모리에 상주</li>
+<li>앱에서 유일하게 하나만 필요한 객체에 사용</li>
+<li>UIApplication, AppDelegate에 사용</li>
 </ul>
+<h4 id="예제코드"><a href="#예제코드" class="headerlink" title="예제코드"></a>예제코드</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrivateSingleton</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">PrivateSingleton</span>()</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">init</span>() &#123;&#125;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> uniqueSingleton = <span class="type">PrivateSingleton</span>.shared</span><br><span class="line">uniqueSingleton.x <span class="comment">// 1</span></span><br><span class="line">uniqueSingleton.x = <span class="number">20</span> <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ss = <span class="type">PrivateSingleton</span>() <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>let으로 선언한 것은 기본적으로 thread-safe 하므로 별도로 Dispatch_once_t 불필요하다.<br>(thread-safe : 멀티 스레드 프로그래밍에서 일반적으로 어떤 함수나 변수, 혹은 객체가 여러 스레드로부터 동시에 접근이 이뤄져도 프로그램의 실행에 문제가 없음을 뜻함. 따라서 동시에 함께 실행되더라도 각 스레드에서의 함수의 수행 결과가 올바르게 나오게 나오는 것<br>Dispatch_once_t : App 라이프 사이클에서 단 한번만 실행되도록 보장해 주는 것을 의미하며 Thread Safe을 보장 받기 위해 사용함.)</li>
+<li>static 전역변수로 선언한 것은 lazy 하게 동작하므로 Singleton을 생성하기 전까지 메모리에 올라가지 않음.</li>
+<li>외부에서 인스턴스를 직접 생성하지 못하도록 private로 선언.</li>
+<li>맨밑의 코드는 에러가 난다. private로 초기화 선언했기 때문에.</li>
+</ul>
+<h4 id="활용예제"><a href="#활용예제" class="headerlink" title="활용예제"></a>활용예제</h4><p>Singleton을 활용하는 것중 대표적으로 UserDefaults가 있다.<br>UserDefaults란 ios에서 데이터를 파일에 저장하기 위해 사용하는 대표적인 클래스중 하나이다. 간단한 정보를 저장하고 불러올때 사용하며 내부적으로 plist파일로 저장한다.</p>
+<h4 id="예제코드-1"><a href="#예제코드-1" class="headerlink" title="예제코드"></a>예제코드</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 데이터 저장</span></span><br><span class="line"><span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(<span class="string">"macker"</span>, forKey: <span class="string">"userID"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 데이터 불러오기</span></span><br><span class="line"><span class="keyword">let</span> aUser:<span class="type">String</span> = <span class="type">UserDefaults</span>.standard.object(forKey: <span class="string">"UserID"</span>) <span class="keyword">as</span>! <span class="type">String</span> </span><br><span class="line"><span class="keyword">let</span> sUser:<span class="type">String</span> = <span class="type">UserDefaults</span>.standard.string(forKey: <span class="string">"UserID"</span>)!</span><br></pre></td></tr></table></figure>
+<p>marker란 단어를 userID 키로 저장한다. 그리고 가져올때는 밑의 두 형식으로 자유롭게 가져와서 사용한다. 위의 코드와 var i = 10 이런 식의 코드의 차이점은<br>위의 코드는 바로 파일에 저장하고 후자는 메모리에 저장한다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
