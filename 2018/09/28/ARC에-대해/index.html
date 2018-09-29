@@ -208,7 +208,23 @@
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h4 id="About-ARC"><a href="#About-ARC" class="headerlink" title="About ARC?"></a>About ARC?</h4><p>ARC(Auto Reference Counting)은 자동으로 메모리 관리를 해주는 것이다. 컴파일러가 개발자를 대신하여 메모리 관리 코드를 적절한 곳에 자동으로 삽입 해준다. 그래서 개발자가 특별하게 할 일은 없지만 개념을 알고있어야 해결할수 있는 문제가 있기 때문에 잘 알아야 한다.<br><img src="https://i.imgur.com/Cm3c86L.png" alt="Imgur"></p>
-<h4 id="History"><a href="#History" class="headerlink" title="History"></a>History</h4>
+<h4 id="History"><a href="#History" class="headerlink" title="History"></a>History</h4><p>ARC가 있기전엔 메모리 관리를 어떻게 했을지 알아보자.</p>
+<ol>
+<li>GC(Garbage Collection)</li>
+</ol>
+<ul>
+<li>정기적으로 Garbage Collector가 동작하여 더이상 사용되지 않는 메모리를 반환하는 방식</li>
+<li>OS X에서만 지원했으나, 버전 10.8(Mountain Lion)부터 사용되지 않음</li>
+</ul>
+<ol start="2">
+<li>MRR(Manual Retain-Release) / MRC(Manual Reference Counting)</li>
+</ol>
+<ul>
+<li>RC(Reference Counting)을 통해 메모리를 수동적으로 관리하는 방식</li>
+<li>retain / release / autorelease 등의 메모리 관리 코드를 직접 호출</li>
+<li>개발자가 명시적으로 RC를 증가시키고 감소시키는 작업 수행</li>
+</ul>
+
 
                 
             </div>
