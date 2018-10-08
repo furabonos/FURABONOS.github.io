@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="study blog"/>
+        <meta property="og:title" content="GCD (1)"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>swift - study blog</title>
+    <title>GCD (1) - study blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -157,166 +157,84 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#swift</h1>
+                <div class="post-heading">
+                    <h1>GCD (1)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-10-08
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/swift/">#swift</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/10/08/GCD-1/">
-        <h1 class="post-title archive">
-            GCD (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-10-08
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/10/02/Generic에-대해/">
-        <h1 class="post-title archive">
-            Generic
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-10-02
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/28/ARC에-대해/">
-        <h1 class="post-title archive">
-            ARC
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/27/Delegate에-대해/">
-        <h1 class="post-title archive">
-            Delegate
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/25/Singleton에-대해/">
-        <h1 class="post-title archive">
-            Singleton
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-25
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/23/App-Life-Cycle에-대해/">
-        <h1 class="post-title archive">
-            App Life Cycle
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/21/optional-이란/">
-        <h1 class="post-title archive">
-            optional
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-21
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/20/closure에-대해-3-escaping/">
-        <h1 class="post-title archive">
-            closure (3) - noescaping, escaping
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-20
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/19/closure에-대해-2-capture-list/">
-        <h1 class="post-title archive">
-            closure (2) - capture list
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/18/closure에-대해/">
-        <h1 class="post-title archive">
-            closure (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="Grand-Central-Dispatch"><a href="#Grand-Central-Dispatch" class="headerlink" title="Grand Central Dispatch"></a>Grand Central Dispatch</h3><p>swift 에서 Thread 관련 작업은 Grand Central Dispatch(GCD)를 통해 처리한다. 즉, 어느작업을 어느 Thread에서 처리할지, Multi-Thread로 할것인지, 코어를 여러개 사용할것인지 정하는것이 바로 GCD다. GCD는 Closure로 표현된 작업을 Queue에 올리고, 이 Queue를 Thread에 출격시켜 실행하는 작업을 수행한다. 쉽게 생각하면 swift에서 multi-threading 작업을 수행하는 API다. 주로 시간이 오래걸리는 작업을 수행하면서 사용자의 UI를 막지않고자 할때 사용한다. </p>
+<h4 id="GCD-History"><a href="#GCD-History" class="headerlink" title="GCD History"></a>GCD History</h4><ul>
+<li>초기엔 마이크로 프로세서의 clock 속도를 높이는 방식으로 연산속도를 높임</li>
+<li>점점 증가하는 전력소비, 열로 인해 단일 프로세서의 clock 속도증가에 한계를 맞았으며, 이는 특히 모바일에서 영향을 크게 받음</li>
+<li>따라서 CPU 벤더들은 단일 속도 증가보다 여러개의 CPU를 탑재하는 형태로 초점을 맞추게 됨</li>
+<li>clock 속도가 빨라지면서 자연스럽게 소프트웨어도 빨라지던 과거와 달리 멀티 프로세서에선 어떻게 프로그램의 동작을 잘 배분하냐가 중요이슈가 됨</li>
+<li>GCD 이전에는 멀티스레딩을 위해 Thread와 OperationQueue 등의 클래스를 사용했는데, 코드가 까다롭고 많이 필요하다.</li>
+<li>GCD는 멀티 코어 프로세서 시스템에 대한 응용 프로그램 지원을 최적화하기 위해 Apple에서 개발한 기술로 Thread 관리와 실행에 대한 책임을 어플리케이션 레벨에서 운영체제 레벨로 넘김</li>
+<li>작업의 단위는 block이라 불리며 DispatchQueue가 이 block들을 관리</li>
+<li>GCD는 각 어플리케이션에서 생성된 DispatchQueue를 읽는 멀티코어 실행 엔진을 갖고있으며 이것이 Queue에 등록된 각 작업을 꺼내 Thread에 할당, 개발자는 내부 동작을 자세히 알 필요없이 Queue에 작업을 넘기기만 하면됨</li>
+<li>Thread를 직접 생성하고 관리하는 것에 비해 관리용이성, 성능증가</li>
 </ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
