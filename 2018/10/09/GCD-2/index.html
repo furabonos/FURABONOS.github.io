@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="study blog"/>
+        <meta property="og:title" content="GCD (2)"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives - study blog</title>
+    <title>GCD (2) - study blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -157,168 +157,75 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>GCD (2)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-10-09
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/swift/">#swift</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/10/09/GCD-2/">
-        <h1 class="post-title archive">
-            GCD (2)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-10-09
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/10/08/GCD-1/">
-        <h1 class="post-title archive">
-            GCD (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-10-08
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h4 id="DispatchQueue-global-qos-userInitiated-async"><a href="#DispatchQueue-global-qos-userInitiated-async" class="headerlink" title="DispatchQueue.global(qos: .userInitiated).async"></a>DispatchQueue.global(qos: .userInitiated).async</h4><p>다음은 DispatchQueue와 QoS를 사용한 예시이다. 이미지를 불러오는 작업은 global Queue에 userInitiated QoS를 활용하여 async로 처리하도록 했다. Main Queue가 아닌 global Queue에 이미지 불러오기 작업을 시켜서 이미지를 가져오는 동안 유저가 다른 작업을 실행할수 있게끔 한다. 이미지를 모두 가져왔다면 다시 Main Queue로 돌아와 이미지를 유저에게 보여주는 작업을 한다.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 시간이 걸리는 작업을 위해 thread를 옮김.</span></span><br><span class="line"><span class="type">DispatchQueue</span>.global(qos: .userInitiated).async &#123;</span><br><span class="line">    <span class="keyword">let</span> image = <span class="keyword">self</span>.loadOrGenerateAnImage()</span><br><span class="line">    <span class="type">DispatchQueue</span>.main.async &#123;</span><br><span class="line">        <span class="keyword">self</span>.imageView.image = image</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="지정한-시간후-처리-실행"><a href="#지정한-시간후-처리-실행" class="headerlink" title="지정한 시간후 처리 실행"></a>지정한 시간후 처리 실행</h4><p>아래 예는 어떤 임의의 작업을 실행하는 예로 DispatchTime.now()에서 얻은 현재 시간에서 .second(10)을 통해 10초를 추가했다.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">DispatchQueue</span>.main.asyncAfter(deadline: <span class="type">DispatchTime</span>.now() + .second(<span class="number">10</span>)) &#123;</span><br><span class="line">    <span class="keyword">self</span>.doSomething()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="모든-큐-처리가-끝나면-특정작업을-실행"><a href="#모든-큐-처리가-끝나면-특정작업을-실행" class="headerlink" title="모든 큐 처리가 끝나면 특정작업을 실행"></a>모든 큐 처리가 끝나면 특정작업을 실행</h4><p>우선 그룹과 큐를 생성하고 큐에 처리를 등록할때 그룹을 지정해서 큐와 그룹을 묶는다. 모든 큐처리가 완료되면 main thread에서 사라진다.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> g = <span class="type">DispatchGroup</span>()</span><br><span class="line"><span class="keyword">let</span> q1 = <span class="type">DispatchQueue</span>(label: <span class="string">"FURABONO.Queue1"</span>)</span><br><span class="line"><span class="keyword">let</span> q2 = <span class="type">DispatchQueue</span>(label: <span class="string">"FURABONO.Queue2"</span>)</span><br><span class="line"><span class="keyword">let</span> q3 = <span class="type">DispatchQueue</span>(label: <span class="string">"FURABONO.Queue3"</span>)</span><br><span class="line"></span><br><span class="line">q1.async(group: g) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"queue1 완료"</span>)</span><br><span class="line">&#125;</span><br><span class="line">q2.async(group: g) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"queue2 완료"</span>)</span><br><span class="line">&#125;</span><br><span class="line">q3.async(group: g) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"queue3 완료"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">g.notify(queue: <span class="type">DispatchQueue</span>.main) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"전체 작업 완료"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/10/02/Generic에-대해/">
-        <h1 class="post-title archive">
-            Generic
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-10-02
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/09/28/ARC에-대해/">
-        <h1 class="post-title archive">
-            ARC
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/27/Delegate에-대해/">
-        <h1 class="post-title archive">
-            Delegate
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/25/Singleton에-대해/">
-        <h1 class="post-title archive">
-            Singleton
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-25
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/23/App-Life-Cycle에-대해/">
-        <h1 class="post-title archive">
-            App Life Cycle
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/21/optional-이란/">
-        <h1 class="post-title archive">
-            optional
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-21
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/20/closure에-대해-3-escaping/">
-        <h1 class="post-title archive">
-            closure (3) - noescaping, escaping
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-20
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/19/closure에-대해-2-capture-list/">
-        <h1 class="post-title archive">
-            closure (2) - capture list
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-19
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
