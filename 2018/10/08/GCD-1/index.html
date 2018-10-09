@@ -219,6 +219,16 @@
 <li>GCD는 각 어플리케이션에서 생성된 DispatchQueue를 읽는 멀티코어 실행 엔진을 갖고있으며 이것이 Queue에 등록된 각 작업을 꺼내 Thread에 할당, 개발자는 내부 동작을 자세히 알 필요없이 Queue에 작업을 넘기기만 하면됨</li>
 <li>Thread를 직접 생성하고 관리하는 것에 비해 관리용이성, 성능증가</li>
 </ul>
+<h4 id="sync-async"><a href="#sync-async" class="headerlink" title="sync, async"></a>sync, async</h4><ul>
+<li>sync(동기)<ul>
+<li>queue에 처리를 등록한 thread가 등록한 처리를 완료할때까지 대기</li>
+</ul>
+</li>
+<li>async(비동기)<ul>
+<li>queue에 처리를 등록한 thread가 등록한 처리를 완료할때까지 기다리지 않음. </li>
+</ul>
+</li>
+</ul>
 <h4 id="DispatchQueue"><a href="#DispatchQueue" class="headerlink" title="DispatchQueue"></a>DispatchQueue</h4><p>GCD는 Thread Safe한 DispatchQueue를 제공하여 Multi-threading 작업을 수행하도록 해준다. GCD가 제공하는 Queue는 세가지가 있다.</p>
 <h5 id="1-main-serial"><a href="#1-main-serial" class="headerlink" title="1) main(serial)"></a>1) main(serial)</h5><p>Main Thread에서 처리되는 serial queue. 모든 UI작업은 Main Queue에서 수행해야 한다.</p>
 <h5 id="2-global-concurrent"><a href="#2-global-concurrent" class="headerlink" title="2) global(concurrent)"></a>2) global(concurrent)</h5><p>전체 시스템에 공유되는 concurrent queue다. 작업의 우선순위를 사전에 정의한 4가지 QoS를 활용하게 된다.</p>
