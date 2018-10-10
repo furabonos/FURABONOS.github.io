@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="study blog"/>
+        <meta property="og:title" content="Critical Section, Mutex, Semaphore"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2018 - study blog</title>
+    <title>Critical Section, Mutex, Semaphore - study blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -157,77 +157,89 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018</h1>
+                <div class="post-heading">
+                    <h1>Critical Section, Mutex, Semaphore</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-10-10
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/swift/">#swift</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/09/20/closure에-대해-3-escaping/">
-        <h1 class="post-title archive">
-            closure (3) - noescaping, escaping
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-20
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/09/19/closure에-대해-2-capture-list/">
-        <h1 class="post-title archive">
-            closure (2) - capture list
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/18/closure에-대해/">
-        <h1 class="post-title archive">
-            closure (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2018/">&larr;  Newer Posts</a></li>
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>멀티 프로세스, 멀티 쓰레드 시스템에서 공유자원에 대한 동시 간섭을 막기 위한 동기화 작업중 유저모드 동기화와 커널모드 동기화가 있는데 대표적으로 유저모드 동기화에 Critical Section, Mutex, Semaphore 등이 있다.</p>
+<h4 id="Critical-Section"><a href="#Critical-Section" class="headerlink" title="Critical Section"></a>Critical Section</h4><p>임계 영역 또는 임계 구역이라고 불리는 Critical Section은 멀티 프로세스의 각 프로세스가 데이터를 공유하며 수행될때 동시 접근 가능한 프로그램 코드 영역을 말하며 이 공유 자원에 대한 독점 사용을 제공하는 역할.</p>
+<p>특징</p>
+<ul>
+<li>동일 프로세스 내의 Thread 사이에서만 동기화 가능</li>
+<li>유저모드 동기화 객체이므로 다른 커널모드 객체(Mutex, Semaphore)에 비해 가볍고 빠르다.</li>
+<li>먼저 접근한 Thread는 EnterCriticalSection을 통해 락을 획득하고 그 이후 접근하는 Thread는 대기시킨다. 할일을 마치면 LeaveCriticalSection으로 락을 해제 후 다른 Thread가 접근할수 있게한다.</li>
+<li>대기중인 Thread는 다른 Thread에게 CPU점유를 넘겨야 하므로 Context Switching이 발생하지만 이후 대기시간 동안은 CPU자원을 점유하지 않는다.<br>여기서 마지막에 특징에 언급된 Context Switching으로 발생하는 자원낭비를 막기위해 Spin Lock이라는 방식이 사용된다.</li>
 </ul>
+<h4 id="Mutex"><a href="#Mutex" class="headerlink" title="Mutex"></a>Mutex</h4><p>커널모드 동기화 객체로 Critical Section보다는 느리지만 서로 다른 프로세스의 Thread간 동기화 작업이 가능하다. 다중 프로세스의 공유 리소스에 대한 접근을 조율하기 위해 사용되며 Lock, UnLock 2가지 값을 가진다. 따라서 Critical Section처럼 동시에 하나의 Thread에 대해서만 작업이 가능하며 해당 Thread는 Lock에 대한 소유권을 가지게 되고, 직접 해제해야 한다. 비유하자면 차키를 A라는 사람이 갖고있는데 A가 누군가에게 차키를 주기전까지 그 누구도 차를 이용할수 없는 상황과 같다. 밑의 사진은 2개의 Thread가 서로 공유 자원을 사용할때 한쪽은 반드시 기다려야 함을 의미한다.</p>
+<p><img src="https://i.imgur.com/dQnfySM.png" alt="Imgur"></p>
+<h4 id="Semaphore"><a href="#Semaphore" class="headerlink" title="Semaphore"></a>Semaphore</h4><p>Semaphore 역시 커널모드 동기화 객체로 여러개의 공유자원을 가진 여러개의 카운트값을 가진 Mutex라고 생각해볼수있다. 접근할수있는 Thread의 갯수를 정해놓고 그 갯수만큼 관리하는데, 카운트가 1인 Semaphore는 Binary Semaphore, 여러개라면 Counting Semaphore라 한다. 이 역시 간단한 비유를 하자면 은행창구로 비유할수있다. 창구가 4개이고 사람이 6명이라면 두명은 자리가 날때까지 기다려야 한다. 밑의 이미지는 카운트가 6, Thread가 4개 이므로 기다릴 필요는 없다.<br><img src="https://i.imgur.com/htvO0qD.png" alt="Imgur"><br>Semaphore는 주로 운영체제의 리소스를 경쟁적으로 사용하는 다중 프로세스에서 행동을 조정하거나 동기화 시키기위해 기술이며 일반적으로 비교적 긴 시간을 확보하는 리소스에 대해 활용한다.</p>
+<h4 id="Mutex-vs-Semaphore"><a href="#Mutex-vs-Semaphore" class="headerlink" title="Mutex vs Semaphore"></a>Mutex vs Semaphore</h4><ul>
+<li>Mutex는 카운트가 1인 Binary Semaphore라고 할수있다. 즉 Semaphore는 Mutex가 될수있지만 Mutex는 Semaphore가 될수없다.</li>
+<li>Mutex는 Lock을 소유한 Thread가 직접 해제해야 하지만 Semaphore는 외부에서 조정될수 있다.</li>
+<li>Semaphore는 일반적으로 공유자원을 프로세스 단위에서 접근하는 것을 관리하기 위해 사용하고 Mutex는 Thread단위에서 접근하는 것을 관리하기 위해 사용한다.</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
