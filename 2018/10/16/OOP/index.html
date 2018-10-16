@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="study blog"/>
+        <meta property="og:title" content="OOP"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives - study blog</title>
+    <title>OOP - study blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -157,116 +157,84 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>OOP</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-10-16
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/programming/">#programming</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/09/25/Singleton에-대해/">
-        <h1 class="post-title archive">
-            Singleton
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-25
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/09/23/App-Life-Cycle에-대해/">
-        <h1 class="post-title archive">
-            App Life Cycle
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-23
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h3><p>OOP는 객체지향프로그래밍(Object Oriented Programming)의 줄임말로 프로그램을 어떻게 설계해야 하는지에 대한 일종의 방법론이다. 프로그램을 단순히 데이터와 처리방법으로 나누는것이 아닌, 프로그램을 수많은 객체라는 기본단위로 나누고 이 객체들의 상호작용으로 서술하는 방식이다.</p>
+<h4 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h4><p>객체란 말 그대로 대상을 나타내는 단어이다. 사람 한명한명을 객체라 할수있고 책 한권을 객체라고 할수도 있다. 그런데 사람은 생김새, 성격이 모두 다르고 책도 모든 책의 내용이 같지 않아서 모두 다른 객체가 된다.</p>
+<h4 id="비교"><a href="#비교" class="headerlink" title="비교"></a>비교</h4><p>기존의 절차적 프로그래밍에선 함수를 기계, 데이터를 원료로 가정한다면 데이터가 함수를 통과하면서 데이터가 가공되는 과정이라면, 객체지향프로그래밍에선 데이터를 중심으로 함수가 데이터에 접근해서 데이터를 가공하는 과정이라 볼수있다. 즉 함수가 움직이느냐, 데이터가 움직이느냐 차이다.</p>
+<h3 id="OOP의-특징"><a href="#OOP의-특징" class="headerlink" title="OOP의 특징"></a>OOP의 특징</h3><p>OOP의 특징은 추상화, 캡슐화(은닉화), 상속성, 다형성이 있다.</p>
+<h4 id="추상화"><a href="#추상화" class="headerlink" title="추상화"></a>추상화</h4><p>추상화는 목적과 관련이 없는 부분을 제거하여 필요한 부분만을 표현하기 위한 개념이다. 사물들 간의 공통점만 취하고 차이점을 버리는 일반화를 통한 단순화, 중요한 부분 강조를 위해 불필요한 세부사항을 제거하는 단순화가 있다.</p>
+<p><img src="https://i.imgur.com/9q9FzFH.png" alt="Imgur"></p>
+<h4 id="캡슐화-은닉화"><a href="#캡슐화-은닉화" class="headerlink" title="캡슐화(은닉화)"></a>캡슐화(은닉화)</h4><p>추상화가 디자인에 해당하는 개념이라면 캡슐화는 구현단계의 레벨이다. 데이터캡슐화와 정보은닉화로 객체가 독립적으로 자신의 상태와 역할을 책임지고 수행하도록 자율성을 부여한다. 그리고 자세히 몰라도 되는 내부 동작방법을 숨기고 사용하는 방법만을 외부에 노출한다. TV 리모콘으로 비유하면 사용자는 리모콘의 조작기능(public으로 정의된 속성)만 알아도 된다. 굳이 리모콘의 내부회로의 작동방식(private)이라던가 이런건 알 필요가 없다.</p>
+<p><img src="https://i.imgur.com/zBQ1jG3.png" alt="Imgur"></p>
+<h4 id="상속성"><a href="#상속성" class="headerlink" title="상속성"></a>상속성</h4><p>부모로부터 상속을 받는것이 OOP에서도 가능하다. 실제로 부모와 자식의 관계를 맺는 클래스들이 존재하며 이를 부모클래스, 자식클래스라고 한다. 예를들어 고양이, 강아지 클래스가 있다. 고양이와 강아지는 생물학적 관점에서 포유류에 해당한다. 포유류에는 여러가지 속성들이 존재하는데 고양이와 강아지는 그 속성을 가지고 있다. 즉, 포유류라는 클래스는 고양이, 강아지 클래스에 자신의 속성들을 물려준다. 이것을 상속이라 하고 포유류-고양이, 포유류-강아지는 상속관계에 있다고 한다.</p>
+<p><img src="https://i.imgur.com/kshvqBU.png" alt="Imgur"><br><img src="https://i.imgur.com/sDdgh5I.png" alt="Imgur"></p>
+<h4 id="다형성"><a href="#다형성" class="headerlink" title="다형성"></a>다형성</h4><p>다형성은 형태가 같은데 기능은 다름을 의미한다. 예를들어 고양이 클래스에 울음이라는 속성이 있다. 또 다른 클래스 사자는 고양이과의 동물이므로 고양이 클래스의 속성을 상속받는다 가정하면 사자클래스 역시 울음이라는 속성이 있다. 그러나 고양이의 울음은 “야옹”이고, 사자는 “어흥”이다. 이렇게 같은 울음속성임에도 실제 울음소리는 다르다. 이것이 바로 다형성이다. 부모로부터 물려받은 속성을 자식클래스에서 재정의 할수있는데, 이게 오버라이딩이다. 사자클래스는 고양이 클래스에서 울음이란 속성을 상속받았지만 사자클래스에서 울음이라는 속성을 어흥으로 재정의했다. 이런 다형성을 OOP에서는 허용한다. 다형성을 허용함으로써 좋은점은 같은 이름의 속성을 사용함으로써 인터페이스를 유지하고 메서드이름을 낭비하지 않는다.</p>
+<p><img src="https://i.imgur.com/3JrbrLa.png" alt="Imgur"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/09/21/optional-이란/">
-        <h1 class="post-title archive">
-            optional
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/09/20/closure에-대해-3-escaping/">
-        <h1 class="post-title archive">
-            closure (3) - noescaping, escaping
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-20
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/19/closure에-대해-2-capture-list/">
-        <h1 class="post-title archive">
-            closure (2) - capture list
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/09/18/closure에-대해/">
-        <h1 class="post-title archive">
-            closure (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-09-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
