@@ -242,8 +242,9 @@
 <h4 id="단점-2"><a href="#단점-2" class="headerlink" title="단점"></a>단점</h4><ul>
 <li>NSObject를 상속받는 객체에서만 사용가능함</li>
 <li>dealloc될때 옵저버를 지워줘야 함</li>
-<li>많은 value를 감지할때는 많은 조건문이 필요<br>덧붙여서 swift4 전까지는 NSObject의 메소드인 observerValue(forKeyPath:change:context:)를 오버라이드하여 옵저버를 추가했으나, swift4부터는 구독하고 싶은 프로퍼티에 observer()를 추가하여 클로저로 사용이 가능하다. 그러나 swift상에 존재하는 didSet, willSet으로 대체가 가능하다.</li>
+<li>많은 value를 감지할때는 많은 조건문이 필요</li>
 </ul>
+<p>덧붙여서 swift4 전까지는 NSObject의 메소드인 observerValue(forKeyPath:change:context:)를 오버라이드하여 옵저버를 추가했으나, swift4부터는 구독하고 싶은 프로퍼티에 observer()를 추가하여 클로저로 사용이 가능하다. 그러나 swift상에 존재하는 didSet, willSet으로 대체가 가능하다.</p>
 
 
                 
